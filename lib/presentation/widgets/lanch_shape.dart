@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:task2_api_with_cubit/data/model/lanch_model.dart';
 
 class lanchShape extends StatelessWidget {
-  AutoGenerate lanch;
+  AutoGenerator lanch; 
   lanchShape({Key? key, required this.lanch}) : super(key: key);
 
   @override
@@ -25,19 +25,15 @@ class lanchShape extends StatelessWidget {
                         SizedBox(
                           height: 5,
                         ),
-                        Text("Mission Name " + lanch.missionName),
+                        Text("Mission Name " +lanch.missionName.toString()),
                         SizedBox(
                           height: 5,
                         ),
-                        Text("lanch Year " + lanch.launchYear),
+                        Text("lanch Year " + lanch.launchYear.toString()),
                       ],
                     ),
                   ),
-                  Image.network(
-                    lanch.links.missionPatchSmall,
-                    width: 150,
-                    height: 150,
-                  ),
+                  
                 ],
               ),
             ),

@@ -5,6 +5,7 @@ import 'package:task2_api_with_cubit/data/repo/lanches_repo.dart';
 import 'package:task2_api_with_cubit/data/webService/lanchesServices.dart';
 import 'package:task2_api_with_cubit/logic/cubit/lanch_cubit_cubit.dart';
 import 'package:task2_api_with_cubit/presentation/widgets/lanch_shape.dart';
+import 'package:task2_api_with_cubit/logic/cubit/lanch_cubit_state.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -35,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return BlocBuilder<LanchCubitCubit, LanchCubitState>(
       builder: (context, state) {
         print(state);
-        if (state is lanchCubitFull) {
+        /*if (state is lanchCubitFull) {
           allLanches = (state).lanches;
           return buildLoadedListWidgets();
         } else {
@@ -44,7 +45,20 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Text("lal"),
             width: double.infinity,
           );
-        }
+        }*/
+        return state.when(
+          initial: () {
+            return Container(
+              padding: EdgeInsets.only(top: 50, left: 50),
+              child: Text("lal"),
+              width: double.infinity,
+            );
+          },
+          full: (lanches) {
+            allLanches = lanches;
+            return buildLoadedListWidgets();
+          },
+        );
       },
     );
   }

@@ -1,15 +1,17 @@
-part of 'lanch_cubit_cubit.dart';
 
-@immutable
-abstract class LanchCubitState {}
+import 'package:freezed_annotation/freezed_annotation.dart';
+part 'lanch_cubit_state.freezed.dart';
 
-class LanchCubitInitial extends LanchCubitState {
-  
 
+@freezed
+class LanchCubitState with _$LanchCubitState {
+  const factory LanchCubitState.initial() = Initial;
+  const factory LanchCubitState.full(List<dynamic> lanches) = Full;
 }
-class lanchCubitFull extends LanchCubitState{
+
+/*class lanchCubitFull extends LanchCubitState{
 final List<dynamic> lanches;
 
   lanchCubitFull(this.lanches);
 
-}
+}*/

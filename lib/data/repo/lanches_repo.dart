@@ -12,6 +12,6 @@ class lanchRepo {
   // }
   Future<List<dynamic>> getAllCharacters() async {
     final lanches = await services.getAllLanches();
-    return lanches.map((lanch) => AutoGenerate.fromJson(lanch)).toList();
+    return lanches.map((lanch) => AutoGenerator.fromJson(lanch)).toList();
   }
 }
