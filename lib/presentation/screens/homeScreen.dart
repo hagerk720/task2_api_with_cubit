@@ -17,19 +17,24 @@ class _HomeScreenState extends State<HomeScreen> {
   late lanchRepo repo;
   @override
   void initState() {
-      BlocProvider.of<LanchCubitCubit>(context).getAllLanches();
-     super.initState();
-   }
+    BlocProvider.of<LanchCubitCubit>(context).getAllLanches();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: buildBlocWidget());
+    return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          title: Text("SpaceX"),
+        ),
+        body: buildBlocWidget());
   }
 
   Widget buildBlocWidget() {
     return BlocBuilder<LanchCubitCubit, LanchCubitState>(
       builder: (context, state) {
-                  print(state);
+        print(state);
         if (state is lanchCubitFull) {
           allLanches = (state).lanches;
           return buildLoadedListWidgets();
@@ -39,7 +44,6 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Text("lal"),
             width: double.infinity,
           );
-
         }
       },
     );
@@ -47,11 +51,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget buildLoadedListWidgets() {
     return ListView.builder(
-        itemCount:
-            allLanches.length,
+        itemCount: allLanches.length,
         itemBuilder: (BuildContext context, index) {
-          return lanchShape(
-              lanch: allLanches[index]);
+          return lanchShape(lanch: allLanches[index]);
         });
   }
 }

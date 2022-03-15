@@ -7,19 +7,23 @@ import 'data/repo/lanches_repo.dart';
 import 'data/webService/lanchesServices.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   late LanchesServices services;
   late lanchRepo repo;
-   MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: Colors.black,
+      ),
       home: BlocProvider(
         create: (context) => LanchCubitCubit(),
         child: HomeScreen(),
