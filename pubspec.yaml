@@ -37,6 +37,8 @@ dependencies:
   get_it: ^7.2.0
   http: ^0.13.4
   json_annotation: ^4.4.0
+  logger: ^1.1.0
+  retrofit: ^3.0.1+1
 
 dev_dependencies:
   build_runner: ^2.1.8
@@ -44,6 +46,8 @@ dev_dependencies:
     sdk: flutter
   freezed: ^1.1.1
   json_serializable: ^6.1.5
+  retrofit_generator: ^4.0.1
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
