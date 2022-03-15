@@ -95,3 +95,4 @@ class Links {
     return _data;
   }
 }
+
