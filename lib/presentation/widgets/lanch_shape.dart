@@ -22,8 +22,14 @@ class lanchShape extends StatelessWidget {
                     child: Column(
                       children: [
                         Text("Flight Number " + lanch.flightNumber.toString()),
+                        SizedBox(
+                          height: 5,
+                        ),
                         Text("Mission Name " + lanch.missionName),
-                        Text("" + lanch.launchYear),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text("lanch Year " + lanch.launchYear),
                       ],
                     ),
                   ),
