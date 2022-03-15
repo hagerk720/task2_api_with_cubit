@@ -23,6 +23,7 @@ class lanchShape extends StatelessWidget {
                       children: [
                         Text("Flight Number " + lanch.flightNumber.toString()),
                         Text("Mission Name " + lanch.missionName),
+                        Text("" + lanch.launchYear),
                       ],
                     ),
                   ),
