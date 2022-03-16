@@ -8,18 +8,22 @@ part of 'lanch_model.dart';
 
 _$_Autogenerator _$$_AutogeneratorFromJson(Map<String, dynamic> json) =>
     _$_Autogenerator(
-      flightNumber: json['flightNumber'] as int?,
-      missionName: json['missionName'] as String?,
-      missionId: json['missionId'] as List<dynamic>?,
+      flightNumber: json['flight_number'] as int?,
+      missionName: json['mission_name'] as String?,
+      missionId: json['mission_id'] as List<dynamic>?,
       upcoming: json['upcoming'] as bool?,
-      launchYear: json['launchYear'] as String?,
+      launchYear: json['launch_year'] as String?,
+      links: json['links'] == null
+          ? null
+          : Links.fromJson(json['links'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_AutogeneratorToJson(_$_Autogenerator instance) =>
     <String, dynamic>{
-      'flightNumber': instance.flightNumber,
-      'missionName': instance.missionName,
-      'missionId': instance.missionId,
+      'flight_number': instance.flightNumber,
+      'mission_name': instance.missionName,
+      'mission_id': instance.missionId,
       'upcoming': instance.upcoming,
-      'launchYear': instance.launchYear,
+      'launch_year': instance.launchYear,
+      'links': instance.links,
     };

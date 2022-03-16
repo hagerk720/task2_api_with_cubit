@@ -23,17 +23,19 @@ class _$AutoGeneratorTearOff {
   const _$AutoGeneratorTearOff();
 
   _Autogenerator call(
-      {int? flightNumber,
-      String? missionName,
-      List<dynamic>? missionId,
-      bool? upcoming,
-      String? launchYear}) {
+      {@JsonKey(name: "flight_number") int? flightNumber,
+      @JsonKey(name: "mission_name") String? missionName,
+      @JsonKey(name: "mission_id") List<dynamic>? missionId,
+      @JsonKey(name: "upcoming") bool? upcoming,
+      @JsonKey(name: "launch_year") String? launchYear,
+      @JsonKey(name: "links") Links? links}) {
     return _Autogenerator(
       flightNumber: flightNumber,
       missionName: missionName,
       missionId: missionId,
       upcoming: upcoming,
       launchYear: launchYear,
+      links: links,
     );
   }
 
@@ -47,11 +49,18 @@ const $AutoGenerator = _$AutoGeneratorTearOff();
 
 /// @nodoc
 mixin _$AutoGenerator {
+  @JsonKey(name: "flight_number")
   int? get flightNumber => throw _privateConstructorUsedError;
+  @JsonKey(name: "mission_name")
   String? get missionName => throw _privateConstructorUsedError;
+  @JsonKey(name: "mission_id")
   List<dynamic>? get missionId => throw _privateConstructorUsedError;
+  @JsonKey(name: "upcoming")
   bool? get upcoming => throw _privateConstructorUsedError;
+  @JsonKey(name: "launch_year")
   String? get launchYear => throw _privateConstructorUsedError;
+  @JsonKey(name: "links")
+  Links? get links => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -65,11 +74,14 @@ abstract class $AutoGeneratorCopyWith<$Res> {
           AutoGenerator value, $Res Function(AutoGenerator) then) =
       _$AutoGeneratorCopyWithImpl<$Res>;
   $Res call(
-      {int? flightNumber,
-      String? missionName,
-      List<dynamic>? missionId,
-      bool? upcoming,
-      String? launchYear});
+      {@JsonKey(name: "flight_number") int? flightNumber,
+      @JsonKey(name: "mission_name") String? missionName,
+      @JsonKey(name: "mission_id") List<dynamic>? missionId,
+      @JsonKey(name: "upcoming") bool? upcoming,
+      @JsonKey(name: "launch_year") String? launchYear,
+      @JsonKey(name: "links") Links? links});
+
+  $LinksCopyWith<$Res>? get links;
 }
 
 /// @nodoc
@@ -88,6 +100,7 @@ class _$AutoGeneratorCopyWithImpl<$Res>
     Object? missionId = freezed,
     Object? upcoming = freezed,
     Object? launchYear = freezed,
+    Object? links = freezed,
   }) {
     return _then(_value.copyWith(
       flightNumber: flightNumber == freezed
@@ -110,7 +123,22 @@ class _$AutoGeneratorCopyWithImpl<$Res>
           ? _value.launchYear
           : launchYear // ignore: cast_nullable_to_non_nullable
               as String?,
+      links: links == freezed
+          ? _value.links
+          : links // ignore: cast_nullable_to_non_nullable
+              as Links?,
     ));
+  }
+
+  @override
+  $LinksCopyWith<$Res>? get links {
+    if (_value.links == null) {
+      return null;
+    }
+
+    return $LinksCopyWith<$Res>(_value.links!, (value) {
+      return _then(_value.copyWith(links: value));
+    });
   }
 }
 
@@ -122,11 +150,15 @@ abstract class _$AutogeneratorCopyWith<$Res>
       __$AutogeneratorCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int? flightNumber,
-      String? missionName,
-      List<dynamic>? missionId,
-      bool? upcoming,
-      String? launchYear});
+      {@JsonKey(name: "flight_number") int? flightNumber,
+      @JsonKey(name: "mission_name") String? missionName,
+      @JsonKey(name: "mission_id") List<dynamic>? missionId,
+      @JsonKey(name: "upcoming") bool? upcoming,
+      @JsonKey(name: "launch_year") String? launchYear,
+      @JsonKey(name: "links") Links? links});
+
+  @override
+  $LinksCopyWith<$Res>? get links;
 }
 
 /// @nodoc
@@ -147,6 +179,7 @@ class __$AutogeneratorCopyWithImpl<$Res>
     Object? missionId = freezed,
     Object? upcoming = freezed,
     Object? launchYear = freezed,
+    Object? links = freezed,
   }) {
     return _then(_Autogenerator(
       flightNumber: flightNumber == freezed
@@ -169,6 +202,10 @@ class __$AutogeneratorCopyWithImpl<$Res>
           ? _value.launchYear
           : launchYear // ignore: cast_nullable_to_non_nullable
               as String?,
+      links: links == freezed
+          ? _value.links
+          : links // ignore: cast_nullable_to_non_nullable
+              as Links?,
     ));
   }
 }
@@ -177,29 +214,38 @@ class __$AutogeneratorCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Autogenerator with DiagnosticableTreeMixin implements _Autogenerator {
   _$_Autogenerator(
-      {this.flightNumber,
-      this.missionName,
-      this.missionId,
-      this.upcoming,
-      this.launchYear});
+      {@JsonKey(name: "flight_number") this.flightNumber,
+      @JsonKey(name: "mission_name") this.missionName,
+      @JsonKey(name: "mission_id") this.missionId,
+      @JsonKey(name: "upcoming") this.upcoming,
+      @JsonKey(name: "launch_year") this.launchYear,
+      @JsonKey(name: "links") this.links});
 
   factory _$_Autogenerator.fromJson(Map<String, dynamic> json) =>
       _$$_AutogeneratorFromJson(json);
 
   @override
+  @JsonKey(name: "flight_number")
   final int? flightNumber;
   @override
+  @JsonKey(name: "mission_name")
   final String? missionName;
   @override
+  @JsonKey(name: "mission_id")
   final List<dynamic>? missionId;
   @override
+  @JsonKey(name: "upcoming")
   final bool? upcoming;
   @override
+  @JsonKey(name: "launch_year")
   final String? launchYear;
+  @override
+  @JsonKey(name: "links")
+  final Links? links;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AutoGenerator(flightNumber: $flightNumber, missionName: $missionName, missionId: $missionId, upcoming: $upcoming, launchYear: $launchYear)';
+    return 'AutoGenerator(flightNumber: $flightNumber, missionName: $missionName, missionId: $missionId, upcoming: $upcoming, launchYear: $launchYear, links: $links)';
   }
 
   @override
@@ -211,7 +257,8 @@ class _$_Autogenerator with DiagnosticableTreeMixin implements _Autogenerator {
       ..add(DiagnosticsProperty('missionName', missionName))
       ..add(DiagnosticsProperty('missionId', missionId))
       ..add(DiagnosticsProperty('upcoming', upcoming))
-      ..add(DiagnosticsProperty('launchYear', launchYear));
+      ..add(DiagnosticsProperty('launchYear', launchYear))
+      ..add(DiagnosticsProperty('links', links));
   }
 
   @override
@@ -226,7 +273,8 @@ class _$_Autogenerator with DiagnosticableTreeMixin implements _Autogenerator {
             const DeepCollectionEquality().equals(other.missionId, missionId) &&
             const DeepCollectionEquality().equals(other.upcoming, upcoming) &&
             const DeepCollectionEquality()
-                .equals(other.launchYear, launchYear));
+                .equals(other.launchYear, launchYear) &&
+            const DeepCollectionEquality().equals(other.links, links));
   }
 
   @override
@@ -236,7 +284,8 @@ class _$_Autogenerator with DiagnosticableTreeMixin implements _Autogenerator {
       const DeepCollectionEquality().hash(missionName),
       const DeepCollectionEquality().hash(missionId),
       const DeepCollectionEquality().hash(upcoming),
-      const DeepCollectionEquality().hash(launchYear));
+      const DeepCollectionEquality().hash(launchYear),
+      const DeepCollectionEquality().hash(links));
 
   @JsonKey(ignore: true)
   @override
@@ -251,25 +300,34 @@ class _$_Autogenerator with DiagnosticableTreeMixin implements _Autogenerator {
 
 abstract class _Autogenerator implements AutoGenerator {
   factory _Autogenerator(
-      {int? flightNumber,
-      String? missionName,
-      List<dynamic>? missionId,
-      bool? upcoming,
-      String? launchYear}) = _$_Autogenerator;
+      {@JsonKey(name: "flight_number") int? flightNumber,
+      @JsonKey(name: "mission_name") String? missionName,
+      @JsonKey(name: "mission_id") List<dynamic>? missionId,
+      @JsonKey(name: "upcoming") bool? upcoming,
+      @JsonKey(name: "launch_year") String? launchYear,
+      @JsonKey(name: "links") Links? links}) = _$_Autogenerator;
 
   factory _Autogenerator.fromJson(Map<String, dynamic> json) =
       _$_Autogenerator.fromJson;
 
   @override
+  @JsonKey(name: "flight_number")
   int? get flightNumber;
   @override
+  @JsonKey(name: "mission_name")
   String? get missionName;
   @override
+  @JsonKey(name: "mission_id")
   List<dynamic>? get missionId;
   @override
+  @JsonKey(name: "upcoming")
   bool? get upcoming;
   @override
+  @JsonKey(name: "launch_year")
   String? get launchYear;
+  @override
+  @JsonKey(name: "links")
+  Links? get links;
   @override
   @JsonKey(ignore: true)
   _$AutogeneratorCopyWith<_Autogenerator> get copyWith =>
